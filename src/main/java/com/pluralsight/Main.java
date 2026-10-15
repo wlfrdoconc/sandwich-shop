@@ -37,6 +37,27 @@ public class Main {
             return;
         }
 
+        // Cleans the CLRF
+        read.nextLine();
+
+        // 3. Loaded Sandwich (Exercise 2)
+        // Ask if the customer would like a loaded sandwich
+        double loadedRegular = 1.00;
+        double loadedLarge = 1.75;
+
+        System.out.print("Would you like a loaded sandwich? ");
+        String loadedChoice = read.nextLine();
+
+        if (loadedChoice.equalsIgnoreCase("Yes")) {
+            if (sandWichSize == 1) {
+                sandWichPrice = regularSandwichPrice + loadedRegular;
+            }
+            else if (sandWichSize == 2) {
+                sandWichPrice = largeSandwichPrice + loadedLarge;
+            }
+        }
+
+
         // 2. Prompt the user for their age
         System.out.print("How old are you? ");
         int customerAge = read.nextInt();
